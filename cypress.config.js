@@ -1,11 +1,10 @@
 const { defineConfig } = require("cypress");
-require('dotenv').config();
 
 module.exports = defineConfig({
+  defaultCommandTimeout: 30000,
   env: {
-    ...process.env,
-    URL: 'https://www.pinterest.com/',
-    Search: 'Warhammer 40k'
+    URL: 'https://www.youtube.com/',
+    Search: 'Warhammer 40k Space Marine II Trailer'
   },
   e2e: {
     setupNodeEvents(on, config) {

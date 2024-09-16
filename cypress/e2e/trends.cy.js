@@ -1,16 +1,14 @@
-describe('Search', () => {
+describe('Trends', () => {
     const pageURL = Cypress.env('URL');
-    const search = Cypress.env('Search')
-  
+
     beforeEach(()=>{
       cy.visit(pageURL);
     });
-  
-    it('search', () => {
-      cy.get('[id="search-input"]').type(search);
-      cy.get('[id="search-icon-legacy"]').click();
+
+    it('go to Trends', () => {
+      cy.get('[aria-label="Guía"]').first().click();
+      cy.get('[title="Tendencias"]').click();
       cy.get('[id="contents"]').should('be.visible');
       cy.get('[id="contents"] > *:first-child').should('be.visible');
     })
-  
-  });
+});
